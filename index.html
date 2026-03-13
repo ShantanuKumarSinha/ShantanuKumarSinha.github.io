@@ -1,14 +1,378 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Shantanu Kumar Sinha</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shantanu Kumar | Tech Lead & Backend Engineer</title>
+  <meta name="description" content="Shantanu Kumar – Tech Lead, Java Backend & Distributed Systems Engineer" />
+
+  <style>
+    :root {
+      --primary: #111827;
+      --secondary: #374151;
+      --muted: #6b7280;
+      --accent: #2563eb;
+      --bg: #f3f4f6;
+      --card: #ffffff;
+      --border: #e5e7eb;
+    }
+
+    body.dark {
+      --primary: #e5e7eb;
+      --secondary: #d1d5db;
+      --muted: #9ca3af;
+      --accent: #60a5fa;
+      --bg: #0f172a;
+      --card: #020617;
+      --border: #1e293b;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--primary);
+      line-height: 1.7;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      max-width: 1200px;
+      margin: auto;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      padding: 2.5rem 1.8rem;
+      border-right: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      background: var(--bg);
+    }
+
+    .sidebar h1 {
+      font-size: 1.6rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .location {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    nav {
+      margin: 2rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    nav a {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover { color: var(--accent); }
+
+    /* Content */
+    .content {
+      padding: 3rem 3.5rem 4rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 3rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.3rem;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 1.6rem 1.8rem;
+      margin-top: 1.2rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    /* Skill badges */
+    .badges span {
+      display: inline-block;
+      background: rgba(37,99,235,0.1);
+      color: var(--accent);
+      padding: 0.3rem 0.6rem;
+      margin: 0.3rem 0.3rem 0 0;
+      border-radius: 999px;
+      font-size: 0.85rem;
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+
+    .timeline .card {
+      position: relative;
+    }
+
+    .timeline .card::before {
+      content: "";
+      position: absolute;
+      left: -30px;
+      top: 24px;
+      width: 12px;
+      height: 12px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    /* Projects grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.4rem;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* Dark mode toggle */
+    .toggle {
+      cursor: pointer;
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--accent);
+    }
+
+    /* Print */
+    @media print {
+      .sidebar, .toggle { display: none; }
+      .layout { grid-template-columns: 1fr; }
+      body { background: white; color: black; }
+    }
+
+    @media (max-width: 900px) {
+      .layout { grid-template-columns: 1fr; }
+      .sidebar { position: relative; height: auto; border-right: none; }
+      .content { padding: 2rem 1.5rem; }
+    }
+  
+    /* Top header bar */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .topbar-inner {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0.8rem 1.5rem;
+      display: flex;
+      justify-content: flex-end;
+      gap: 1.2rem;
+    }
+
+    .topbar-inner a {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .topbar-inner a:hover { color: var(--accent); }
+  </style>
 </head>
 <body>
-    <h1>Skills</h1>
-    <ul>
-        <li>Databases: PostgreSQL, MySQL, Oracle, MongoDB, NoSQL</li>
-    </ul>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="https://www.linkedin.com/in/shantanu-kumar-ab2b07a4/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/ShantanuKumarSinha" target="_blank">GitHub</a>
+    </div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar">
+      <h1>Shantanu Kumar</h1>
+      <p class="subtitle">Tech Lead<br/>Java & Distributed Systems</p>
+      <p class="location">Bangalore, India</p>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+      </nav>
+      <div class="links">
+        <a href="mailto:shan.raj93@gmail.com">Email</a>
+        <a href="https://github.com/ShantanuKumarSinha" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/shantanu-kumar-ab2b07a4/" target="_blank">LinkedIn</a>
+      </div>
+    </aside>
+
+    <main class="content">
+      <section id="about">
+        <h2>About</h2>
+        <p>
+          Tech Lead with 9+ years of experience building scalable, secure, and high-performance
+          applications using Java, Spring Boot, and microservices. Strong background in
+          distributed systems, cloud platforms (GCP, Azure), and financial-domain applications.
+        </p>
+      </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+        <div class="card">
+          <p><strong>Languages:</strong> Java, Python</p>
+          <p><strong>Backend:</strong> Spring Boot, Spring Batch, REST APIs, Microservices</p>
+          <p><strong>Frontend:</strong> Angular, React, RxJS</p>
+          <p><strong>Databases:</strong> PostgreSQL, MySQL, Oracle</p>
+          <p><strong>Cloud & Tools:</strong> GCP, Azure, Kafka, ElasticSearch, Git, CI/CD</p>
+        </div>
+      </section>
+
+      <section id="experience">
+        <h2>Experience</h2>
+        <div class="timeline">
+          <div class="card">
+            <h3>Tech Lead — Synechron</h3>
+            <p class="time">Feb 2024 – Present</p>
+            <ul>
+              <li>Migrated Spring Batch from v2 to v3, reducing runtime by 30%</li>
+              <li>Resolved SonarQube & Fortify issues, reducing vulnerabilities by 20%</li>
+              <li>Led a team of 7 engineers for enterprise banking applications</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Senior Software Engineer — Societe Generale</h3>
+            <p class="time">Mar 2022 – Feb 2024</p>
+            <ul>
+              <li>Migrated applications to Java 17 & Spring Boot</li>
+              <li>Built REST APIs with 90%+ test coverage</li>
+              <li>Upgraded Angular applications and added multilingual support</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>mcEurekaServer</h3>
+            <p>mcEurekaServer for mcProductService and mcuserService</p>
+            <p><strong>Tech:</strong> Java</p>
+            <a href="https://github.com/ShantanuKumarSinha/mcEurekaServer" target="_blank">GitHub</a>
+          </div>
+
+          <div class="card">
+            <h3>mcProductService</h3>
+            <p>This is a product service application</p>
+            <p><strong>Tech:</strong> Java</p>
+            <a href="https://github.com/ShantanuKumarSinha/mcProductService" target="_blank">GitHub</a>
+          </div>
+
+          <div class="card">
+            <h3>mcUserService</h3>
+            <p>This is a user management application</p>
+            <p><strong>Tech:</strong> Java</p>
+            <a href="https://github.com/ShantanuKumarSinha/mcUserService" target="_blank">GitHub</a>
+          </div>
+
+          <div class="card">
+            <h3>PaymentService</h3>
+            <p>This applications shows a payment gateway</p>
+            <p><strong>Tech:</strong> Java</p>
+            <a href="https://github.com/ShantanuKumarSinha/PaymentService" target="_blank">GitHub</a>
+          </div>
+
+          <div class="card">
+            <h3>ecomm</h3>
+            <p>This is ecommerce website</p>
+            <p><strong>Tech:</strong> Java</p>
+            <a href="https://github.com/ShantanuKumarSinha/ecomm" target="_blank">GitHub</a>
+          </div>
+
+          <div class="card">
+            <h3>SpringRedis</h3>
+            <p>Interaction with Redis DB</p>
+            <p><strong>Tech:</strong> HTML</p>
+            <a href="https://github.com/ShantanuKumarSinha/SpringRedis" target="_blank">GitHub</a>
+          </div>
+
+          <div class="card">
+            <h3>bookMyShow</h3>
+            <p>This application shows how book my show works</p>
+            <p><strong>Tech:</strong> Java</p>
+            <a href="https://github.com/ShantanuKumarSinha/bookMyShow" target="_blank">GitHub</a>
+          </div>
+
+          <div class="card">
+            <h3>WorkingWithGraphQL</h3>
+            <p>This applications shows integration of GraphQL with spring boot application.</p>
+            <p><strong>Tech:</strong> Java</p>
+            <a href="https://github.com/ShantanuKumarSinha/WorkingWithGraphQL" target="_blank">GitHub</a>
+          </div>
+
+          <div class="card">
+            <h3>NotificationSystem</h3>
+            <p>This applications shows integration of kafka with spring boot application</p>
+            <p><strong>Tech:</strong> Java</p>
+            <a href="https://github.com/ShantanuKumarSinha/NotificationSystem" target="_blank">GitHub</a>
+          </div>
+
+          <div class="card">
+            <h3>camunda_spring_boot_integration</h3>
+            <p>This applications shows integration of camunda with spring boot application</p>
+            <p><strong>Tech:</strong> Java</p>
+            <a href="https://github.com/ShantanuKumarSinha/camunda_spring_boot_integration" target="_blank">GitHub</a>
+          </div>
+
+          <div class="card">
+            <h3>SpringVault</h3>
+            <p>Spring Vault Interaction</p>
+            <p><strong>Tech:</strong> Java</p>
+            <a href="https://github.com/ShantanuKumarSinha/SpringVault" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="education">
+        <h2>Education</h2>
+        <div class="card">
+          <p><strong>MS in Computer Science</strong> — Woolf University (Scaler) | 2025</p>
+          <p><strong>B.Tech in Electronics</strong> — MAKAUT | 2015</p>
+        </div>
+      </section>
+
+      <footer>
+        <p>© 2025 Shantanu Kumar</p>
+      </footer>
+    </main>
+  </div>
 </body>
 </html>
