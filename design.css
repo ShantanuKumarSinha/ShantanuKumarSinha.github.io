@@ -1,4 +1,5 @@
-:root {
+/* ── Light theme (default) ── */
+    :root {
       --primary: #111827;
       --secondary: #374151;
       --muted: #6b7280;
@@ -8,6 +9,51 @@
       --border: #e5e7eb;
     }
 
+    /* ── Dark theme ── */
+    body.theme-dark {
+      --primary: #e5e7eb;
+      --secondary: #d1d5db;
+      --muted: #9ca3af;
+      --accent: #60a5fa;
+      --bg: #0f172a;
+      --card: #020617;
+      --border: #1e293b;
+    }
+
+    /* ── Sepia theme ── */
+    body.theme-sepia {
+      --primary: #3b2f1e;
+      --secondary: #5a4231;
+      --muted: #8a7060;
+      --accent: #b45309;
+      --bg: #f5ebe0;
+      --card: #fdf6ec;
+      --border: #ddc9b0;
+    }
+
+    /* ── Forest theme ── */
+    body.theme-forest {
+      --primary: #1a2e1a;
+      --secondary: #2d4a2d;
+      --muted: #5a7a5a;
+      --accent: #3d9b3d;
+      --bg: #e8f5e8;
+      --card: #f0faf0;
+      --border: #b8d8b8;
+    }
+
+    /* ── Ocean theme ── */
+    body.theme-ocean {
+      --primary: #e0f2fe;
+      --secondary: #bae6fd;
+      --muted: #7dd3fc;
+      --accent: #38bdf8;
+      --bg: #0c4a6e;
+      --card: #083352;
+      --border: #0e5f87;
+    }
+
+    /* Legacy alias so any existing references to body.dark still work */
     body.dark {
       --primary: #e5e7eb;
       --secondary: #d1d5db;
@@ -156,6 +202,35 @@
       margin-top: 1.5rem;
       font-size: 0.9rem;
       color: var(--accent);
+    }
+
+    /* Theme selector */
+    .theme-selector {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .theme-selector label {
+      font-size: 0.85rem;
+      color: var(--secondary);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    #theme-select {
+      font-size: 0.85rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--primary);
+      cursor: pointer;
+      outline: none;
+    }
+
+    #theme-select:focus {
+      border-color: var(--accent);
     }
 
     /* Print */
