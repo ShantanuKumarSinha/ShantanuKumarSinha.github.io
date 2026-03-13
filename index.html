@@ -13,6 +13,16 @@
     <div class="topbar-inner">
       <a href="https://www.linkedin.com/in/shantanu-kumar-ab2b07a4/" target="_blank">LinkedIn</a>
       <a href="https://github.com/ShantanuKumarSinha" target="_blank">GitHub</a>
+      <div class="theme-selector">
+        <label for="theme-select">🎨 Theme:</label>
+        <select id="theme-select" aria-label="Select color theme">
+          <option value="theme-light">Light</option>
+          <option value="theme-dark">Dark</option>
+          <option value="theme-sepia">Sepia</option>
+          <option value="theme-forest">Forest</option>
+          <option value="theme-ocean">Ocean</option>
+        </select>
+      </div>
     </div>
   </header>
   <div class="layout">
@@ -168,5 +178,29 @@
       </footer>
     </main>
   </div>
+  <script>
+    (function () {
+      var THEMES = ['theme-light', 'theme-dark', 'theme-sepia', 'theme-forest', 'theme-ocean'];
+      var select = document.getElementById('theme-select');
+
+      function applyTheme(theme) {
+        THEMES.forEach(function (t) { document.body.classList.remove(t); });
+        if (theme !== 'theme-light') {
+          document.body.classList.add(theme);
+        }
+        try { localStorage.setItem('theme', theme); } catch (e) {}
+        if (select.value !== theme) { select.value = theme; }
+      }
+
+      var saved = 'theme-light';
+      try { saved = localStorage.getItem('theme') || 'theme-light'; } catch (e) {}
+      if (!THEMES.includes(saved)) { saved = 'theme-light'; }
+      applyTheme(saved);
+
+      select.addEventListener('change', function () {
+        applyTheme(select.value);
+      });
+    })();
+  </script>
 </body>
 </html>
