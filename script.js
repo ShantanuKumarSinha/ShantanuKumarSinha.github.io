@@ -1,5 +1,5 @@
 (function () {
-  var THEMES = ['theme-light', 'theme-dark', 'theme-sepia', 'theme-forest', 'theme-ocean'];
+  var THEMES = ['theme-light', 'theme-dark', 'theme-sepia', 'theme-forest', 'theme-ocean', 'theme-sunset', 'theme-midnight', 'theme-nord', 'theme-solarized'];
   var DAY_START_HOUR = 6;   // 06:00 – start of daytime (light theme)
   var DAY_END_HOUR   = 18;  // 18:00 – start of nighttime (dark theme)
   var select = document.getElementById('theme-select');

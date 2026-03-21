@@ -53,6 +53,50 @@
       --border: #0e5f87;
     }
 
+    /* ── Sunset theme ── */
+    body.theme-sunset {
+      --primary: #1a0a00;
+      --secondary: #4a2510;
+      --muted: #a05020;
+      --accent: #e07020;
+      --bg: #fff5e0;
+      --card: #fffaef;
+      --border: #f0c080;
+    }
+
+    /* ── Midnight theme ── */
+    body.theme-midnight {
+      --primary: #e2e0f0;
+      --secondary: #c5c0e0;
+      --muted: #8a85b0;
+      --accent: #9c6bde;
+      --bg: #0d0b1a;
+      --card: #140f2a;
+      --border: #2a2050;
+    }
+
+    /* ── Nord theme ── */
+    body.theme-nord {
+      --primary: #2e3440;
+      --secondary: #3b4252;
+      --muted: #4c566a;
+      --accent: #5e81ac;
+      --bg: #eceff4;
+      --card: #e5e9f0;
+      --border: #d8dee9;
+    }
+
+    /* ── Solarized theme ── */
+    body.theme-solarized {
+      --primary: #586e75;
+      --secondary: #657b83;
+      --muted: #839496;
+      --accent: #268bd2;
+      --bg: #fdf6e3;
+      --card: #eee8d5;
+      --border: #93a1a1;
+    }
+
     /* Legacy alias so any existing references to body.dark still work */
     body.dark {
       --primary: #e5e7eb;
